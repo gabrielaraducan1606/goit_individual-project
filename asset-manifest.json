@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goit_individual-project/static/css/main.ab6e6031.css",
-    "main.js": "/goit_individual-project/static/js/main.09c89a56.js",
+    "main.js": "/goit_individual-project/static/js/main.25ef11ab.js",
     "static/media/Strawberry.svg": "/goit_individual-project/static/media/Strawberry.e7364c93fe612e2b504193bd84f702d7.svg",
     "static/media/banana.svg": "/goit_individual-project/static/media/banana.c3a716752415855c247ca01ea62456aa.svg",
     "static/media/leaves.svg": "/goit_individual-project/static/media/leaves.73af25dd17e1bb5d078d4da3254b00ef.svg",
@@ -11,10 +11,10 @@
     "static/media/VectorHomePage.svg": "/goit_individual-project/static/media/VectorHomePage.c655d736b7c28331ec143c1de45f86c8.svg",
     "static/media/backButtonModal.svg": "/goit_individual-project/static/media/backButtonModal.24ce6b342eecfc3ce7e0b459a70fddbb.svg",
     "main.ab6e6031.css.map": "/goit_individual-project/static/css/main.ab6e6031.css.map",
-    "main.09c89a56.js.map": "/goit_individual-project/static/js/main.09c89a56.js.map"
+    "main.25ef11ab.js.map": "/goit_individual-project/static/js/main.25ef11ab.js.map"
   },
   "entrypoints": [
     "static/css/main.ab6e6031.css",
-    "static/js/main.09c89a56.js"
+    "static/js/main.25ef11ab.js"
   ]
 }
