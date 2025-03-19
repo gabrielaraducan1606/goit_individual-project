@@ -4,7 +4,7 @@ const initialState = {
     dailyCaloriesByDate: {},
     consumedFoods: {},
     selectedDate: new Date().toISOString().split("T")[0],
-    forbiddenFoods: [], // ✅ Asigură-te că este inițializat corect
+    forbiddenFoods: [], 
 }
 
 const caloriesSlice = createSlice({
@@ -16,7 +16,7 @@ const caloriesSlice = createSlice({
             state.dailyCaloriesByDate = { ...state.dailyCaloriesByDate, [date]: calories };
         },
         setSelectedDate: (state, action) => {
-            state.selectedDate = action.payload;  // ✅ Stocăm data exactă fără conversie
+            state.selectedDate = action.payload;  
             console.log("🛠 [Redux] Updated selectedDate:", state.selectedDate);
         },
         
@@ -37,7 +37,7 @@ const caloriesSlice = createSlice({
             }
         },
         setForbiddenFoods: (state, action) => {
-            state.forbiddenFoods = action.payload; // ✅ Setează lista produselor nerecomandate
+            state.forbiddenFoods = action.payload; 
         },
     },
 });

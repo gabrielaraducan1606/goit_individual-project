@@ -39,7 +39,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className={styles.login}> {/* ✅ Aplică stilul */}
+        <div className={styles.login}>
          <div className={styles.home}><BackgroundSVG /> </div>
          <div className={styles.loginContainer}>
             <header className={styles.header}>

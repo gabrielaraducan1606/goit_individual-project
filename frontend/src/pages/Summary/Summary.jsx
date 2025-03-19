@@ -7,16 +7,16 @@ import leaves from '../../assets/leaves.svg';
 const Summary = ({ showSvg = true }) => {
     const navigate = useNavigate();
 
-    // ✅ Extract selected date correctly
+    // Extract selected date correctly
     const selectedDate = useSelector((state) => state.calories.selectedDate);
     const formattedDate = selectedDate || new Date().toISOString().split("T")[0];
 
-    // ✅ Memoize Redux state to prevent unnecessary re-renders
+    // Memoize Redux state to prevent unnecessary re-renders
     const dailyCaloriesByDate = useSelector((state) => state.calories.dailyCaloriesByDate);
     const consumedFoods = useSelector((state) => state.calories.consumedFoods);
     const forbiddenFoods = useSelector((state) => state.calories.forbiddenFoods);
 
-    // ✅ Ensure correct values for dailyCalories and consumedCalories
+    // Ensure correct values for dailyCalories and consumedCalories
     const dailyCalories = dailyCaloriesByDate[formattedDate] || 0;
     const validConsumedFoods = useMemo(() => consumedFoods[formattedDate] || [], [consumedFoods, formattedDate]);
     const consumedCalories = validConsumedFoods.reduce((total, food) => total + food.calories, 0);
@@ -24,7 +24,7 @@ const Summary = ({ showSvg = true }) => {
     const remainingCalories = Math.max(dailyCalories - consumedCalories, 0);
     const percentageOfDailyIntake = dailyCalories > 0 ? ((consumedCalories / dailyCalories) * 100).toFixed(1) : 0;
 
-    // ✅ Log updates for debugging
+    // Log updates for debugging
     useEffect(() => {
         console.log("📌 [Summary] Updated for Date:", formattedDate);
         console.log("🔥 [Summary] dailyCaloriesByDate:", dailyCaloriesByDate);
@@ -32,7 +32,7 @@ const Summary = ({ showSvg = true }) => {
         console.log("🔥 [Summary] Consumed Calories:", consumedCalories);
     }, [formattedDate, dailyCaloriesByDate, consumedCalories, validConsumedFoods]);
     
-    // ✅ Logout function
+    // Logout function
     const handleLogout = () => {
         localStorage.removeItem("token");
         navigate("/login");

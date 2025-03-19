@@ -7,7 +7,7 @@ import loaderReducer from "./loaderSlice";
 import modalReducer from "./modalSlice";
 import caloriesReducer from "./caloriesSlice";
 
-// ✅ Combine reducers
+// Combine reducers
 const rootReducer = combineReducers({
     user: userReducer,
     loader: loaderReducer,
@@ -15,17 +15,17 @@ const rootReducer = combineReducers({
     calories: caloriesReducer
 });
 
-// ✅ Persist configuration
+// Persist configuration
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: ["user", "calories"], // ✅ Persist only selected reducers
+    whitelist: ["user", "calories"], // Persist only selected reducers
 };
 
-// ✅ Create persisted reducer
+// Create persisted reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// ✅ Configure store
+// Configure store
 const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
@@ -34,7 +34,7 @@ const store = configureStore({
         }),
 });
 
-// ✅ Persistor
+// Persistor
 const persistor = persistStore(store);
 
 export { store, persistor };

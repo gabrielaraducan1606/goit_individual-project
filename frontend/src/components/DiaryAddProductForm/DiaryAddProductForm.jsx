@@ -34,7 +34,7 @@ const DiaryAddProductForm = ({ selectedDate }) => {
 
         const totalCalories = (weight / 100) * calories;
 
-        // ✅ Ensure selectedDate is always a string
+        // Ensure selectedDate is always a string
         const formattedDate =
             selectedDate instanceof Date
                 ? selectedDate.toISOString().split("T")[0]
@@ -42,7 +42,7 @@ const DiaryAddProductForm = ({ selectedDate }) => {
 
         dispatch(
             addConsumedFood({
-                date: formattedDate, // ✅ Save with formatted date
+                date: formattedDate, //Save with formatted date
                 name: product,
                 weight: Number(weight),
                 calories: totalCalories,

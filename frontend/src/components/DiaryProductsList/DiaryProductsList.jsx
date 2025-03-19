@@ -9,13 +9,13 @@ const DiaryProductsList = ({ selectedDate }) => {
     const [lastIndex, setLastIndex] = useState(null);
     const [isScrolling, setIsScrolling] = useState(false);
 
-    // ✅ Formatăm data selectată
+    // Formatăm data selectată
     const formattedDate =
         selectedDate instanceof Date
             ? selectedDate.toISOString().split("T")[0]
             : new Date(selectedDate).toISOString().split("T")[0];
 
-    // ✅ Obținem lista de alimente consumate pentru data selectată
+    //Obținem lista de alimente consumate pentru data selectată
     const consumedFoods = useSelector((state) => state.calories.consumedFoods[formattedDate] || []);
 
     // 🔥 Scroll automat către ultimul element adăugat
@@ -28,7 +28,7 @@ const DiaryProductsList = ({ selectedDate }) => {
         }
     }, [consumedFoods]);
 
-    // 🔥 Detectează scroll-ul și elimină efectul ombre temporar
+    // Detectează scroll-ul și elimină efectul ombre temporar
     const handleScroll = () => {
         setIsScrolling(true);
         setTimeout(() => {
